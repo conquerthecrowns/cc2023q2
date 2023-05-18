@@ -25,6 +25,12 @@ function initSmoothScroll() {
 }
 initSmoothScroll()
 
+// Check if loader has been loaded before
+if (sessionStorage.getItem('visited') !== null) {
+  document.querySelector('.intro').remove()
+}
+sessionStorage.setItem('visited', 'true')
+
 // Stagger each rider //
 const race = gsap.timeline({
   paused: true,
